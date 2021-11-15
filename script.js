@@ -10,9 +10,9 @@ const words = ["サル","キリン","ライオン","ゾウ","ウシ",
 "シカ","イノシシ","アライグマ","リス","ラクダ",
 ];
 
-let currentIndex = -1;
 
 const text = document.getElementById("text");
+var currentIndex = Math.floor(Math.random() *  words.length);
 
 document.getElementById("next")?.addEventListener("click", () => {
   if (text && currentIndex < words.length) {
