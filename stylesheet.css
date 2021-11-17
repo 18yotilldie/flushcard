@@ -43,10 +43,10 @@ li {
 	top: 20%;
 	left: 50%;
 	transform: translate(-50%, -50%);  
-  font-size:180px;
+  font-size:170px;
   text-align: center;
   height: 40%;
-  width: 70%;
+  width: 75%;
   background-color: rgb(253, 192, 243);
 }
 
