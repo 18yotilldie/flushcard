@@ -40,14 +40,13 @@ li {
 
 #text {
   position: absolute;
-	top: 20%;
-	left: 50%;
-	transform: translate(-50%, -50%);  
-  font-size:500%;
-　　　　white-space: nowrap;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  font-size:200px;
   text-align: center;
-  height: 40%;
-  width: 75%;
+  height: 300px;
+  width: 1300px;
   background-color: rgb(253, 192, 243);
 }
 
