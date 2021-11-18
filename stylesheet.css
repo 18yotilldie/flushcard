@@ -45,7 +45,7 @@ li {
   transform: translate(-50%, -50%);  
   font-size:170px;
   text-align: center;
-  virtical-align: middle;	
+  virtical-align: 50%;	
   height: 300px;
   width: 80%;
   background-color: rgb(253, 192, 243);
