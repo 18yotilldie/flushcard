@@ -74,3 +74,10 @@ li {
   text-align: center;
   background-color: rgb(228, 227, 180);
 }
+
+#caution{
+  position: absolute;
+  bottom: 10px;
+  left:10px;
+  font-size: 350%;
+  }
