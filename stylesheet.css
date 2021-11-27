@@ -40,16 +40,15 @@ li {
 
 #text {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);  
   font-size:170px;
   text-align: center;
-  virtical-align: 50%;	
-  height: 40%;
+  vertical-align: middle;	
+  height:300px;
   width: 90%;
   background-color: rgb(253, 192, 243);
-}
 
 #next {
   display: inline-block;
