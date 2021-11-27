@@ -54,24 +54,12 @@ li {
   display: inline-block;
   cursor: pointer;
   position: absolute;
-	bottom: 10px;
+  bottom: 10px;
   right:10px;
-  height: 20%;
+  height: 15%;
   width: 25%;
   font-size: 350%;
   background-color: rgb(0, 120, 189);
-}
-
-#counter {
-  display: inline-block;
-  position: absolute;
-	bottom: 10px;
-  right:50pc;
-  height: 150px;
-  width: 400px;
-  font-size: 100px;
-  text-align: center;
-  background-color: rgb(228, 227, 180);
 }
 
 #caution{
