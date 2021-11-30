@@ -69,3 +69,10 @@ li {
   left:10px;
   font-size: 20px;
   }
+
+#default{
+  position: absolute;
+  top: 72px;
+  left:45%;
+  font-size: 70px;
+}  
