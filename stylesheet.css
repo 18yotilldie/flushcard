@@ -10,22 +10,19 @@ li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-}
-
 .header {
   background-color: #3126d0;
   color: rgb(255, 255, 255);
   height: 70px;
 }
 
-li {
+a{
   list-style: none;
+  font-size: 20px;
   float: left;
   padding: 40px 20px;
+  color: rgb(255, 255, 255);
 }
-
 
 .header-logo {
   float: left;
@@ -45,9 +42,11 @@ li {
   transform: translate(-50%, -50%);  
   font-size:170px;
   text-align: center;
+  line-height: 300px;
   vertical-align: middle;	
   height:300px;
   width: 90%;
+  font-weight: bold;
   background-color: rgb(253, 192, 243);
 }
 
@@ -55,7 +54,7 @@ li {
   display: inline-block;
   cursor: pointer;
   position: absolute;
-  bottom: 10px;
+	bottom: 10px;
   right:10px;
   height: 15%;
   width: 25%;
@@ -63,16 +62,10 @@ li {
   background-color: rgb(0, 120, 189);
 }
 
-#caution{
-  position: absolute;
-  bottom: 10px;
-  left:10px;
-  font-size: 20px;
-  }
-
 #default{
   position: absolute;
   top: 72px;
   left:45%;
-  font-size: 70px;
+  font-size: 80px;
+  font-weight: bold;
 }  
