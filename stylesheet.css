@@ -18,9 +18,9 @@ li {
 
 a{
   list-style: none;
-  font-size: 20px;
-  float: left;
-  padding: 40px 20px;
+  font-size: 40px;
+  float: right;
+  padding: 10px 36px;
   color: rgb(255, 255, 255);
 }
 
@@ -50,9 +50,8 @@ a{
   background-color: rgb(253, 192, 243);
 }
 
-#next {
+#correct {
   display: inline-block;
-  color: rgb(255,255,255);	
   cursor: pointer;
   position: absolute;
 	bottom: 10px;
@@ -60,13 +59,35 @@ a{
   height: 15%;
   width: 25%;
   font-size: 350%;
-  background-color: rgb(0, 120, 189);
+  background-color: rgb(235, 239, 4);
 }
+
+#pass {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+	bottom: 10px;
+  left:10px;
+  height: 15%;
+  width: 25%;
+  font-size: 350%;
+  color: white;
+  background-color: rgb(16, 0, 189);
+}
+
 
 #default{
   position: absolute;
-  top: 20px;
-  left:40%;
+  top: 72px;
+  left:45%;
   font-size: 80px;
   font-weight: bold;
 }  
+
+#point{
+  position: absolute;
+  bottom: 10px;
+  left:50%;
+  font-size: 100px;
+  font-weight: bold;
+}
