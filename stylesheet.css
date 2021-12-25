@@ -44,7 +44,7 @@ a{
   text-align: center;
   line-height: 250px;
   vertical-align: middle;	
-  height:300px;
+  height:270px;
   width: 90%;
   font-weight: bold;
   background-color: rgb(253, 192, 243);
@@ -57,7 +57,7 @@ a{
 	bottom: 10px;
   right:10px;
   height: 15%;
-  width: 25%;
+  width: 30%;
   font-size: 350%;
   background-color: rgb(235, 239, 4);
 }
@@ -69,7 +69,7 @@ a{
 	bottom: 10px;
   left:10px;
   height: 15%;
-  width: 25%;
+  width: 30%;
   font-size: 350%;
   color: white;
   background-color: rgb(16, 0, 189);
@@ -86,7 +86,7 @@ a{
 
 #point{
   position: absolute;
-  bottom: 5px;
+  bottom: 0px;
   left:50%;
   font-size: 100px;
   font-weight: bold;
