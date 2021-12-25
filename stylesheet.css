@@ -50,6 +50,10 @@ a{
   background-color: rgb(253, 192, 243);
 }
 
+.next {
+  float: left;
+}
+
 #correct {
   display: inline-block;
   cursor: pointer;
@@ -58,23 +62,30 @@ a{
   right:10px;
   height: 15%;
   width: 30%;
-  font-size: 350%;
+  font-size: 50px;
   background-color: rgb(235, 239, 4);
 }
 
 #pass {
   display: inline-block;
   cursor: pointer;
-  position: absolute;
+  position: absolute;  
 	bottom: 10px;
   left:10px;
   height: 15%;
   width: 30%;
-  font-size: 350%;
+  font-size: 50px;
   color: white;
   background-color: rgb(16, 0, 189);
 }
 
+#point{
+  position: absolute;
+  bottom: -70px;
+  left:50%;
+  font-size: 100px;
+  font-weight: bold;
+}
 
 #default{
   position: absolute;
@@ -83,12 +94,3 @@ a{
   font-size: 80px;
   font-weight: bold;
 }  
-
-#point{
-  position: absolute;
-  float: left;
-  bottom: -15px;
-  left:50%;
-  font-size: 100px;
-  font-weight: bold;
-}
