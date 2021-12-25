@@ -86,7 +86,8 @@ a{
 
 #point{
   position: absolute;
-  bottom: 0px;
+  float: left;
+  bottom: -15px;
   left:50%;
   font-size: 100px;
   font-weight: bold;
