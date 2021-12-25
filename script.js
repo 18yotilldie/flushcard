@@ -1,9 +1,9 @@
 const words = ["サル","キリン","ライオン","ゾウ","ウシ",
 "ゴリラ","ウサギ","ラッコ","ワニ","パンダ",
-"ネコ","カエル","ツル","クマ","タヌキ",
+"ネコ","カエル","イヌ","クマ","タヌキ",
 "ブタ","ペンギン","バッタ","ヘビ","ウマ",
 "キツネ","チョウ","ニワトリ","カタツムリ","アザラシ",
-"カンガルー","イカ","ハムスター","コアラ","タコ",
+"カンガルー","イカ","カブトムシ","コアラ","タコ",
 "クジラ","ネズミ","カマキリ","ザリガニ","サメ",
 "カニ","クワガタ","ムササビ","クラゲ","カメ",
 "ヤギ","シマウマ","カバ","ヒツジ","サイ",
@@ -18,16 +18,22 @@ while (a) {
   words[j] = t;
 }
  
-const text = document.getElementById("text");
-
-document.getElementById("next")?.addEventListener("click", () => {
-  text.textContent = words[a];
-  a++;
-  });
-
-document.getElementById("next")?.addEventListener("click", () => {
-  count_start();
+var text = document.getElementById("text");
+var next = document.getElementsByClassName("next");
+var nexts = Array.from(next);
+nexts.forEach(function(change){
+  change.addEventListener("click",() => {
+      text.textContent = words[a];
+      count_start();
+      a++;
+    })  
 });
+
+var p = 1;
+document.getElementById("correct")?.addEventListener("click", () => {
+    point.textContent = p;
+    p++;
+  });
 
 //変数の定義---------------------------------------------------------------------
 var count   = 60;     //カウントダウンの数字を格納する変数  1分なので60
@@ -64,3 +70,10 @@ function count_down(){
               count_down.innerHTML = ("0"+min) +"：" + ("0"+sec).slice(-2);
   }
 }
+
+const restart = document.getElementById("restart");
+
+document.getElementById("restart")?.addEventListener("click", () => {
+  window.location.reload();
+});
+
