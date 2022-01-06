@@ -33,6 +33,7 @@ a{
 .main {
   height: 100pc;
   background: cyan;
+  background-size: cover;	
 }
 
 #text {
