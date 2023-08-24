@@ -21,23 +21,6 @@ li {
 .header-logo {
   font-size: 24px;
 }
-#toggleMenu {
-  display: none;
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-#menu {
-  display: flex;
-  gap: 20px;
-}
-#menu a {
-  font-size: 20px;
-  color: #fff;
-  text-decoration: none;
-}
 
 /* メインコンテンツのスタイル */
 .main {
@@ -45,7 +28,6 @@ li {
   height: calc(100vh - 70px); /* ヘッダーの高さを差し引く */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 上下の余白を均等に */
   align-items: center;
   padding: 20px; /* 左右の余白 */
 }
@@ -57,10 +39,16 @@ li {
   padding: 20px;
   border-radius: 10px;
 }
+#countdown {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 .button-container {
   display: flex;
-  justify-content: space-between; /* ボタンを均等に配置 */
+  justify-content: space-between; /* ボタンとポイントの間隔を調整 */
   width: 100%; /* コンテナ幅を最大に */
+  margin-top: 10px;
 }
 .next {
   font-size: 4vw;
@@ -76,10 +64,6 @@ li {
 }
 #point {
   font-size: 8vw;
-  font-weight: bold;
-}
-#default {
-  font-size: 6vw;
   font-weight: bold;
 }
 /* メディアクエリ */
