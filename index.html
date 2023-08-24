@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,22 +8,17 @@
 <body>
   <div class="header">
     <div class="header-logo">お題提示ボード</div>
-    <button id="toggleMenu">メニュー</button>
-    <div class="header-list" id="menu">
-      <ul>
-        <li><a href="#">もう一度</a></li>
-      </ul>
-    </div>
+    <button id="restart">もう一度</button>
   </div>
 
   <div class="main">
     <p id="text">お題</p>
+    <div id="countdown"></div>
     <div class="button-container">
-      <button type="button" id="pass" class="next">開始/パス</button>
       <button type="button" id="correct" class="next">正解</button>
+      <p id="point" class="next">0</p>
+      <button type="button" id="pass" class="next">開始/パス</button>
     </div>
-    <p id="point" class="next">0</p> 
-    <p id="default">01:00</p>
   </div>
 
   <script src="script.js"></script>
