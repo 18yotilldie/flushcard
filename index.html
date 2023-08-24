@@ -6,6 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <title>FlushCard</title>
   <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    /* メニューのスタイルを調整 */
+    #toggleMenu {
+      display: none;
+    }
+    #menu {
+      display: none;
+    }
+    .header-list.active #menu {
+      display: block;
+    }
+    /* レスポンシブデザイン用のメディアクエリ */
+    @media (max-width: 600px) {
+      .header-list ul {
+        display: none;
+      }
+      #toggleMenu {
+        display: block;
+      }
+      #menu {
+        display: none;
+      }
+      .header-list.active #menu {
+        display: block;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
