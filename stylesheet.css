@@ -1,165 +1,133 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FlushCard</title>
-  <link rel="stylesheet" href="stylesheet.css">
-  <style>
-    /* メタビューポートの設定と共通スタイル */
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
-    }
-    li {
-      list-style: none;
-    }
+/* メタビューポートの設定と共通スタイル */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+li {
+  list-style: none;
+}
 
-    /* ヘッダーのスタイル */
-    .header {
-      background-color: #3126d0;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
-    .header-logo {
-      font-size: 24px;
-    }
-    #toggleMenu {
-      display: none;
-      font-size: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    #menu {
-      display: flex;
-      gap: 20px;
-    }
-    #menu a {
-      font-size: 20px;
-      color: #fff;
-      text-decoration: none;
-    }
+/* ヘッダーのスタイル */
+.header {
+  background-color: #3126d0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.header-logo {
+  font-size: 24px;
+}
+#toggleMenu {
+  display: none;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+#menu {
+  display: flex;
+  gap: 20px;
+}
+#menu a {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
 
-    /* メインコンテンツのスタイル */
-    .main {
-      background: cyan;
-      height: calc(100vh - 70px); /* ヘッダーの高さを差し引く */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    #text {
-      font-size: 10vw;
-      text-align: center;
-      font-weight: bold;
-      background-color: rgb(253, 192, 243);
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .next {
-      margin-top: 20px;
-      font-size: 4vw;
-      cursor: pointer;
-    }
-    #correct {
-      background-color: rgb(235, 239, 4);
-    }
-    #pass {
-      color: white;
-      background-color: rgb(16, 0, 189);
-    }
-    #point {
-      font-size: 8vw;
-      font-weight: bold;
-    }
-    #default {
-      font-size: 6vw;
-      font-weight: bold;
-    }
+/* メインコンテンツのスタイル */
+.main {
+  background: cyan;
+  height: calc(100vh - 70px); /* ヘッダーの高さを差し引く */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#text {
+  font-size: 10vw;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgb(253, 192, 243);
+  padding: 20px;
+  border-radius: 10px;
+}
+.next {
+  margin-top: 20px;
+  font-size: 4vw;
+  cursor: pointer;
+}
+#correct {
+  background-color: rgb(235, 239, 4);
+}
+#pass {
+  color: white;
+  background-color: rgb(16, 0, 189);
+}
+#point {
+  font-size: 8vw;
+  font-weight: bold;
+}
+#default {
+  font-size: 6vw;
+  font-weight: bold;
+}
 
-    /* メディアクエリ */
-    @media only screen and (min-width: 768px) {
-      .header {
-        padding: 15px 40px;
-      }
-      .header-logo {
-        font-size: 30px;
-      }
-      #toggleMenu {
-        display: block;
-      }
-      #menu {
-        gap: 40px;
-      }
-      #text {
-        font-size: 80px;
-        padding: 40px;
-        border-radius: 20px;
-      }
-      .next {
-        font-size: 30px;
-      }
-      #point {
-        font-size: 80px;
-      }
-      #default {
-        font-size: 60px;
-      }
-    }
-    @media only screen and (min-width: 1024px) {
-      .header {
-        padding: 20px 80px;
-      }
-      .header-logo {
-        font-size: 36px;
-      }
-      #menu {
-        gap: 60px;
-      }
-      #text {
-        font-size: 120px;
-        padding: 60px;
-        border-radius: 30px;
-      }
-      .next {
-        font-size: 40px;
-      }
-      #point {
-        font-size: 100px;
-      }
-      #default {
-        font-size: 80px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <div class="header-logo">お題提示ボード</div>
-    <button id="toggleMenu">メニュー</button>
-    <div class="header-list" id="menu">
-      <ul>
-        <li><a href="#">もう一度</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="main">
-    <p id="text">お題</p>
-    <button type="button" id="correct" class="next">正解</button>
-    <button type="button" id="pass" class="next">開始/パス</button> 
-    <p id="point" class="next">0</p> 
-    <p id="default">01:00</p>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+/* メディアクエリ */
+@media only screen and (min-width: 768px) {
+  .header {
+    padding: 15px 40px;
+  }
+  .header-logo {
+    font-size: 30px;
+  }
+  #toggleMenu {
+    display: block;
+  }
+  #menu {
+    gap: 40px;
+  }
+  #text {
+    font-size: 80px;
+    padding: 40px;
+    border-radius: 20px;
+  }
+  .next {
+    font-size: 30px;
+  }
+  #point {
+    font-size: 80px;
+  }
+  #default {
+    font-size: 60px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    padding: 20px 80px;
+  }
+  .header-logo {
+    font-size: 36px;
+  }
+  #menu {
+    gap: 60px;
+  }
+  #text {
+    font-size: 120px;
+    padding: 60px;
+    border-radius: 30px;
+  }
+  .next {
+    font-size: 40px;
+  }
+  #point {
+    font-size: 100px;
+  }
+  #default {
+    font-size: 80px;
+  }
+}
