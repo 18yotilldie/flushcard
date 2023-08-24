@@ -30,6 +30,7 @@ nexts.forEach(function(change){
 });
 
 var p = 0; // ポイントの変数
+var point = document.getElementById("point"); // ポイント表示の要素
 
 document.getElementById("correct")?.addEventListener("click", () => {
   point.textContent = ++p; // ポイントをインクリメントして表示
@@ -49,7 +50,7 @@ function count_start(){
     start_f = true;
   }
 }
-  
+
 // カウントダウンの開始-----------------------------------------------------
 function count_down(){
   if(count === 1){
