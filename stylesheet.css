@@ -45,8 +45,9 @@ li {
   height: calc(100vh - 70px); /* ヘッダーの高さを差し引く */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* 上下の余白を均等に */
   align-items: center;
+  padding: 20px; /* 左右の余白 */
 }
 #text {
   font-size: 10vw;
@@ -56,10 +57,15 @@ li {
   padding: 20px;
   border-radius: 10px;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between; /* ボタンを均等に配置 */
+  width: 100%; /* コンテナ幅を最大に */
+}
 .next {
-  margin-top: 20px;
   font-size: 4vw;
   cursor: pointer;
+  padding: 10px 20px;
 }
 #correct {
   background-color: rgb(235, 239, 4);
@@ -76,7 +82,6 @@ li {
   font-size: 6vw;
   font-weight: bold;
 }
-
 /* メディアクエリ */
 @media only screen and (min-width: 768px) {
   .header {
