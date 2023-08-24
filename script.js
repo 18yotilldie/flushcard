@@ -8,26 +8,25 @@ const words = ["サル","キリン","ライオン","ゾウ","ウシ",
 "カニ","クワガタ","ムササビ","クラゲ","カメ",
 "ヤギ","シマウマ","カバ","ヒツジ","サイ",
 "シカ","イノシシ","アライグマ","リス","ラクダ"];
-
 var a = 0;
 shuffleArray(words);
 
 var text = document.getElementById("text");
 var countdown = document.getElementById("countdown"); // カウントダウンの要素を追加
-var next = document.getElementsByClassName("next");
-var nexts = Array.from(next);
+var passButton = document.getElementById("pass");
+var correctButton = document.getElementById("correct");
+var point = document.getElementById("point");
 
 var p = 0;
-var point = document.getElementById("point");
+var count = 60;
+var interval;
+var start_f = false;
 
 document.getElementById("restart")?.addEventListener("click", () => {
   window.location.reload();
 });
 
-// カウントダウン関連
-var count = 60;
-var interval;
-
+// カウントダウンの開始
 function count_start(){
   if (start_f === false) {
     interval = setInterval(count_down, 1000);
@@ -35,6 +34,7 @@ function count_start(){
   }
 }
 
+// カウントダウンの処理
 function count_down(){
   if (count === 1){
     countdown.style.color = 'red';
@@ -48,24 +48,24 @@ function count_down(){
   }
 }
 
-// 各ボタンのクリックイベント
-nexts.forEach(function(change){
-  change.addEventListener("click", () => {
-    if (a < words.length) {
-      text.textContent = words[a];
-      count_start();
-      a++;
-    } else {
-      text.textContent = "おしまい";
-    }
-  })  
+// ボタンのクリックイベント
+passButton.addEventListener("click", () => {
+  if (a < words.length) {
+    text.textContent = words[a];
+    count = 60; // カウントリセット
+    countdown.innerHTML = "";
+    count_start();
+    a++;
+  } else {
+    text.textContent = "おしまい";
+  }
 });
 
-document.getElementById("correct")?.addEventListener("click", () => {
+correctButton.addEventListener("click", () => {
   point.textContent = ++p;
 });
 
-// 配列をシャッフルする関数------------------------------------------------
+// 配列をシャッフルする関数
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -74,8 +74,3 @@ function shuffleArray(array) {
     array[j] = temp;
   }
 }
-
-// リスタートボタンがクリックされたときの処理-----------------------------------
-document.getElementById("restart")?.addEventListener("click", () => {
-  window.location.reload(); // ページをリロードしてリスタート
-});
