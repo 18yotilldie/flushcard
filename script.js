@@ -1,76 +1,59 @@
-const words = ["サル","キリン","ライオン","ゾウ","ウシ",
-"ゴリラ","ウサギ","ラッコ","ワニ","パンダ",
-"ネコ","カエル","イヌ","クマ","タヌキ",
-"ブタ","ペンギン","バッタ","ヘビ","ウマ",
-"キツネ","チョウ","ニワトリ","カタツムリ","アザラシ",
-"カンガルー","イカ","カブトムシ","コアラ","タコ",
-"クジラ","ネズミ","カマキリ","ザリガニ","サメ",
-"カニ","クワガタ","ムササビ","クラゲ","カメ",
-"ヤギ","シマウマ","カバ","ヒツジ","サイ",
-"シカ","イノシシ","アライグマ","リス","ラクダ"];
-var a = 0;
-shuffleArray(words);
+const words = [“サル”,”キリン”,”ライオン”,”ゾウ”,”ウシ”,”ゴリラ”,”ウサギ”,”ラッコ”,”ワニ”,”パンダ”,”ネコ”,”カエル”,”イヌ”,”クマ”,”タヌキ”,”ブタ”,”ペンギン”,”バッタ”,”ヘビ”,”ウマ”,”キツネ”,”チョウ”,”ニワトリ”,”カタツムリ”,”アザラシ”,”カンガルー”,”イカ”,”カブトムシ”,”コアラ”,”タコ”,”クジラ”,”ネズミ”,”カマキリ”,”ザリガニ”,”サメ”,”カニ”,”クワガタ”,”ムササビ”,”クラゲ”,”カメ”,”ヤギ”,”シマウマ”,”カバ”,”ヒツジ”,”サイ”,”シカ”,”イノシシ”,”アライグマ”,”リス”,”ラクダ”];
 
-var text = document.getElementById("text");
-var countdown = document.getElementById("countdown"); // カウントダウンの要素を追加
-var passButton = document.getElementById("pass");
-var correctButton = document.getElementById("correct");
-var point = document.getElementById("point");
+var a = words.length;
+while (a) {
+var j = Math.floor( Math.random() * a );
+var t = words[–a];
+words[a] = words[j];
+words[j] = t;
+}
 
-var p = 0;
-var count = 60;
-var interval;
+var text = document.getElementById(“text”);
+var next = document.getElementsByClassName(“next”);
+var nexts = Array.from(next);
+nexts.forEach(function(change){
+change.addEventListener(“click”,() => {
+text.textContent = words[a];
+count_start();
+a++;
+})
+});
+
+var p=1;
+document.getElementById(“correct”)?.addEventListener(“click”, () => {
+point.textContent = p;
+p++;
+});
+
+var count = 60;var min = 0;
+var sec = 0;
 var start_f = false;
+var interval;
 
-document.getElementById("restart")?.addEventListener("click", () => {
-  window.location.reload();
-});
-
-// カウントダウンの開始
 function count_start(){
-  if (start_f === false) {
-    interval = setInterval(count_down, 1000);
-    start_f = true;
-  }
+if (start_f === false) {
+interval = setInterval(count_down,1000);
+start_f = true;
+}
 }
 
-// カウントダウンの処理
 function count_down(){
-  if (count === 1){
-    countdown.style.color = 'red';
-    countdown.innerHTML = "TIME UP!";
-    clearInterval(interval);
-  } else {
-    count--;
-    var min = Math.floor(count / 60);
-    var sec = count % 60;
-    countdown.innerHTML = ("0" + min) + "：" + ("0" + sec).slice(-2);
-  }
+if(count === 1){
+var display = document.getElementById(“default”);
+display.style.color = ‘red’;
+display.innerHTML = “TIME UP!”;
+clearInterval(interval);
+} else {
+count–;
+min = Math.floor(count / 60);
+sec = count % 60;
+var count_down=document.getElementById(“default”);
+count_down.innerHTML = (“0″+min) +”：” + (“0″+sec).slice(-2);
+}
 }
 
-// ボタンのクリックイベント
-passButton.addEventListener("click", () => {
-  if (a < words.length) {
-    text.textContent = words[a];
-    count = 60; // カウントリセット
-    countdown.innerHTML = "";
-    count_start();
-    a++;
-  } else {
-    text.textContent = "おしまい";
-  }
-});
+const restart = document.getElementById(“restart”);
 
-correctButton.addEventListener("click", () => {
-  point.textContent = ++p;
+document.getElementById(“restart”)?.addEventListener(“click”, () =>
+{window.location.reload();
 });
-
-// 配列をシャッフルする関数
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-}
