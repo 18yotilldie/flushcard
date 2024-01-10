@@ -1,23 +1,32 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FlushCard</title>
-  <link rel="stylesheet" href="stylesheet.css">
-</head>
-<body>
-  <div class="header">
-    <div class="header-logo">お題提示ボード</div>
-    <button id="restart">もう一度</button>
-  </div>
+<!DOCTYPE html>
 
-  <div class=main>
- 　  　<p id=”text”>お題</p>
-　　   <button type=”button” id=”correct” class=”next”> 正解</button>
-　　   <button type=”button” id=”pass” class=”next”>開始/パス</button>
-　　   <p id=”point” class=”next”>0</p>
-　　   <p id=”default”>01:00</p>
-  </div>
-  <script src="script.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>FlushCard</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+
+  <body>
+    <div class="header">
+        <div class="header-logo">お題提示ボード</div>
+        <div class="header-list">
+          <ul>
+            <li><a href="">もう一度</a></li>
+          </ul>    
+        </div>
+    </div>
+
+    <div class=main>
+      <p id="text">お題</p>
+      <button type="button" id="correct" class="next"> 正解</button>
+      <button type="button" id="pass" class="next">開始/パス</button> 
+      <p id="point" class="next">0</p> 
+      <p id="default">01:00</p>
+    </div>
+
+    <script src="script.js"></script>  
+
+  </body>
 </html>
