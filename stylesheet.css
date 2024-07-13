@@ -4,6 +4,34 @@ html,body{
 
 body {
   font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 小さな画面向けのスタイル */
+.container {
+    padding: 10px;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* 中くらいの画面向けのスタイル */
+@media (min-width: 600px) {
+    .card {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+/* 大きな画面向けのスタイル */
+@media (min-width: 900px) {
+    .card {
+        width: 30%;
+        margin: 1.66%;
+    }
 }
 
 li {
